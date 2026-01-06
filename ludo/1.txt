@@ -1,0 +1,153 @@
+Turn Number : 1
+---------------------
+Turn Number : 2
+yellow 6
+---------------------
+Turn Number : 3
+yellow 12
+---------------------
+Turn Number : 4
+yellow 16
+green 6
+---------------------
+Turn Number : 5
+yellow 19
+green 10
+---------------------
+Turn Number : 6
+yellow 24
+green 15
+---------------------
+Turn Number : 7
+yellow 28
+green 18
+---------------------
+Turn Number : 8
+yellow 32
+green 19
+---------------------
+Turn Number : 9
+yellow 38
+green 22
+---------------------
+Turn Number : 10
+yellow 43
+green 23
+red 6
+---------------------
+Turn Number : 11
+yellow 45
+green 27
+red 9
+---------------------
+Turn Number : 12
+yellow 48
+green 30
+red 10
+---------------------
+Turn Number : 13
+yellow 54
+yellow 54
+green 34
+red 14
+---------------------
+Turn Number : 14
+yellow 54
+green 39
+red 19
+---------------------
+Turn Number : 15
+yellow 54
+green 40
+red 21
+---------------------
+Turn Number : 16
+yellow 55
+green 46
+red 26
+---------------------
+Turn Number : 17
+yellow 55
+green 48
+red 27
+---------------------
+Turn Number : 18
+yellow 55
+green 52
+red 31
+---------------------
+Turn Number : 19
+yellow 56
+Yellow is winner
+green 52
+red 37
+---------------------
+Yellow is 1st
+Turn Number : 20
+Yellow is winner
+green 53
+red 40
+blue 6
+---------------------
+Yellow is 1st
+Turn Number : 21
+Yellow is winner
+green 53
+red 43
+blue 11
+---------------------
+Yellow is 1st
+Turn Number : 22
+Yellow is winner
+green 55
+green 55
+red 48
+blue 13
+---------------------
+Yellow is 1st
+Turn Number : 23
+Yellow is winner
+green 55
+red 52
+blue 19
+---------------------
+Yellow is 1st
+Turn Number : 24
+Yellow is winner
+green 56
+Green is winner
+red 54
+blue 21
+---------------------
+Turn Number : 25
+Yellow is winner
+Green is winner
+red 54
+blue 22
+---------------------
+Turn Number : 26
+Yellow is winner
+Green is winner
+red 54
+blue 25
+---------------------
+Turn Number : 27
+Yellow is winner
+Green is winner
+red 55
+blue 30
+---------------------
+Turn Number : 28
+Yellow is winner
+Green is winner
+red 55
+blue 33
+---------------------
+Turn Number : 29
+Yellow is winner
+Green is winner
+red 56
+Red is winner
+blue 36
+---------------------
+Blue  is looser
