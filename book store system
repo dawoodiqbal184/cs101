@@ -1,1 +1,298 @@
+#include <iostream>
+#include <cstring>
+#include <string>
+using namespace std;
+int main(){
+    // VARIABLES USED IN CODE
+ const int x = 10;
+ string books[x];  //   string array of names of 11 books
+ string authors[x];   //   string array of name of authors
+ string genre[x];   // string array of genres of books
+ string type[x];   // string array of types of books physical or e-book
+ string customerCart[x];   // string arrays of books added in customers cart
+ string findBook;  // string arrays for manager to find and then remove book
+ string updateBook;   // string for manger to find then update data of book
+ string findGenre; // string for customer to find book by genre
+ int quantity[x];  // int array for quantities of books
+ int price[x];  // int array for prices of books
+ int bookNumber = 0;   // int for index of books string array
+ int authorNumber = 0;  // int for index of authors names string array
+ int genreNumber = 0;  // int for index of genre string array
+ int typeNumber = 0;  // int for index of type of books string array
+ int quantityNumber = 0;  // int for index of quantity of books int array
+ int priceNumber = 0;  // int for index of prices of books of int array
+ int customer_cart;  // int for adding book to cart using index of book number
+ int user  = -1;  // int for choice of user 
+ int manager;   // int for storing manager choice
+ int Pin;  // int for storing manager pin
+ int customer;    // int for storing the customer choice
+ int index;   //    int for printing the index at which desired book is placed
+ int update_book;  // int for storing the index of book to be updated
+ int browschoice;  // int for taking the browisng type of customer
+ bool managerPin = false;
+ // LOOP # 1THAT WILL MAKE ALL THE VALUES TO NULL
+ for (int i = 0 ; i < 10 ; i++){
+    books[i] = "NULL";
+    authors[i] = "NULL";
+    genre[i] = "NULL";
+    type [i] = "NULL";
+    quantity[i] = 0;
+    price[i] = 0;
+}  // for loop # 1 closed
+ // MAIN MENU OF THE PROGRAM
+ for (int a = 1 ; a <= 38 ; a++) cout << "-";
+ cout << endl<<endl;
+ cout << "  ONLINE BOOK STORE MANAGEMENT SYSTEM  ";
+ cout << endl<<endl;
+ for (int a = 1 ; a <= 38 ; a++) cout << "-";
+    cout <<endl<<endl;
+while (user != 0){
+    cout << "1. Manager" << endl;
+    cout << "2. Customer" << endl;
+    cout << "3. Exit program , Press 0\n";
+    cin >> user;
+    // LOOP # 2 FOR MANAGER
+    while (user == 1 ){
+            if (managerPin == false){
+                cout << "Enter manager login password\n";
+                cin >> Pin;
+            }
+            if ( Pin == 12345){  // if condition checking manager password
+                managerPin = true;
+                cout << "Manager Menu:"<< endl;
+                cout << "1. Add Book" << endl;
+                cout << "2. Remove Book" << endl;
+                cout << "3. Update Book Info" << endl;
+                cout << "4. View All Books" << endl;
+                cout << "5. Generate Sales Report "<<endl;
+                cout << "6. Return to main menu"<<endl;
+                cin>> manager;
+                if (manager == 1){     // selection statement for adding the book in inventory
+                    for (int i = 0 ; i < 10 ; i++){
+                        if (books[i] == "NULL"){
+                            index = i;
+                            break;
+                        }
+                    }
+                    cin.ignore();
+                    cout << "Enter the title of book\n";
+                    getline (cin , books[index]);
+                    cout << "Enter the name of author\n";
+                    getline (cin , authors[index]);
+                    cout << "Enter the genre of book\n";
+                    getline (cin , genre[index]);
+                    cout << "Enter the type of book\n";
+                    getline(cin , type[index]);
+                    cout << "Enter the quantity of book\n";
+                    cin >> quantity[index];
+                    cout << "Enter the price of book\n";
+                    cin >> price[index];
+                }  // adding book in inventory part of code ended successfully
+                else if (manager == 2){  // for removing the pre added books
+                    cout << "Enter the name of book you want to remove\n";
+                    getline (cin , findBook);
+                    for (int i = 0 ; i < 10 ; i++){
+                        if (findBook == books[i]){
+                            books[i] = "NULL";
+                            authors[i] = "NULL";
+                            genre[i] = "NULL";
+                            type [i] = "NULL";
+                            quantity[i] = 0;
+                            price[i] = 0;
+                        }
+                    }
+                }  // removing books from inventory ended successfully
+                else if (manager == 3){  // updating book info part started
+                    cout << ":Update Book Info Selected\n";
+                    cout << "Enter the name of book to update\n";
+                    getline(cin , updateBook);
+                    for (int i = 0 ; i < 10 ; i++){
+                        if (updateBook == books[i]){
+                            update_book = i;
+                            break;
+                        }
+                    }
+                    cin.ignore();
+                    cout << "Book title : "<<books[update_book]<<endl;
+                    cout << "Author Name : "<<authors[update_book]<<endl;
+                    cout << "Genre : "<<genre[update_book]<<endl;
+                    cout << "Type of Book is : "<<type[update_book]<<endl;
+                    cout << "The previous price of book was : "<<price[update_book]<<endl;
+                    cout << "Enter the new price of book : ";
+                    cin >> price[update_book];
+                    cout << endl;
+                    cout << "The previous quantity of book was : "<<quantity[update_book]<<endl;
+                    cout << "Enter the new quantity of book : ";
+                    cin >> quantity[update_book];
+                    cout << endl;
+                }  // updating book info part ended successfully
+                else if (manager == 4){  // veiw all books part started
+                    cout << ":View All Books Selected\n";
+                    for (int i = 0; i < 10 ; i++){
+                        if (books[i] != "NULL"){
+                        cout<<"Book Title: "<<books[i]<<endl;
+                        cout<<"Author: "<<authors[i]<<endl;
+                        cout<<"Genre: "<<genre[i]<<endl;
+                        cout<<"Type: "<<type[i]<<endl;
+                        cout<<"Quantity: "<<quantity[i]<<endl;
+                        cout<<"Price: "<<price[i]<<endl;
+                        }
+                    }
+                }  // veiw all books part ended successfully
+                else if (manager == 5){  // manager sales report part started 
+                    cout << ":Generate Sales Report Selected:";
+                }  // manager sales report code missing untill now
+                else if (manager == 6){ // part of code move manager to main menu
+                    break;
+                }  // manager moved to main menu successfully
+            }  // manager part ended 
+    }  // manager loop ended
 
+
+
+
+    while (user == 2){  // customer loop started
+            cout << "1. Browse book \n";
+	        cout << "2. Add book to shopping cart :\n";
+	        cout << "3. View cart \n";
+	        cout << "4. checkout \n";
+	        cin >> customer;
+	        if (customer == 1){  // customer browsing book part started
+                cout<<"Browse by:"<<endl;
+                cout<<"1) Genre"<<endl;
+                cout<<"2) Author"<<endl;
+                cout<<"3) Title"<<endl;
+                cout<<"4) Show all"<<endl;
+                cout<<"Choose: "<<endl;
+                cin>>browschoice;
+                if(browschoice==1){  // customer browse by genre started
+                    cout<<"Enter genre to search: ";
+                    cin>>findGenre;
+                    for(int i = 0 ; i < 10 ; i++){
+                        if(findGenre == genre[i]){
+                            cout<<"Book Title: "<<books[i]<<endl;
+                            cout<<"Author: "<<authors[i]<<endl;
+                            cout<<"Genre: "<<genre[i]<<endl;
+                            cout<<"Type: "<<type[i]<<endl;
+                            cout<<"Price: "<<price[i]<<endl;
+                        }
+                    }
+                }  // customer browse by genre ended but problem is still unknown
+                else if(browschoice==2){  // customer browse by author started 
+                    string findAuthor;
+                    cout<<"Enter author to search: ";
+                    cin>>findAuthor;
+                    for(int i=0;i< 10;i++){
+                        if(findAuthor == authors[i]){
+                            cout<<"Book Title: "<<books[i]<<endl;
+                            cout<<"Author: "<<authors[i]<<endl;
+                            cout<<"Genre: "<<genre[i]<<endl;
+                            cout<<"Type: "<<type[i]<<endl;
+                            cout<<"Price: "<<price[i]<<endl;
+                        }
+                    }
+                }  // customer browse by author ended successfully
+               else if(browschoice==3){
+                    string findTitle;
+                    cout<<"Enter title to search: ";
+                    cin>>findTitle;
+                    for(int i=0;i<bookNumber;i++){
+                        if(findTitle == books[i]){
+                            cout<<"Book Title: "<<books[i]<<endl;
+                            cout<<"Author: "<<authors[i]<<endl;
+                            cout<<"Genre: "<<genre[i]<<endl;
+                            cout<<"Type: "<<type[i]<<endl;
+                            cout<<"Quantity: "<<quantity[i]<<endl;
+                            cout<<"Price: "<<price[i]<<endl;
+                        }
+                    }
+                }
+                else if(browschoice==4){
+                    for(int i=0;i<bookNumber;i++){
+                        cout<<"Book Title: "<<books[i]<<endl;
+                        cout<<"Author: "<<authors[i]<<endl;
+                        cout<<"Genre: "<<genre[i]<<endl;
+                        cout<<"Type: "<<type[i]<<endl;
+                        cout<<"Quantity: "<<quantity[i]<<endl;
+                        cout<<"Price: "<<price[i]<<endl;
+                    }
+                }
+        }
+    
+	    if (customer == 2){
+		    for(int i = 0;i <= x,i++){
+                if(books[i] != "NULL"){
+                    cout << "Details of book number "<<i<<endl;
+                    cout<<"Book Title: "<<books[i]<<endl;
+                    cout<<"Author: "<<authors[i]<<endl;
+                    cout<<"Genre: "<<genre[i]<<endl;
+                    cout<<"Type: "<<type[i]<<endl;
+                    cout<<"price: "<<price[i]<<endl;
+                }
+            }
+            cout<<"enter number of book u want to add to cart"<<endl;
+            int l=0;
+            cin >>customer_cart[l];
+            l++;
+            cout<<"Book Added to cart successfully"<<endl;
+            cout<<"do you want to add more books (y=0/n=1)"<<endl;
+            int more;
+            cin>>more;
+            do{
+            if(more==0){
+                cout<<"enter number of book u want to add to cart"<<endl;
+                cin>>customer_cart[l];
+                l++;
+                cout<<"Book Added to cart successfully"<<endl;
+                cout<<"do you want to add more books (y=0/n=1)"<<endl;
+                cin>>more;
+            }
+            else {
+                cout<<"returning to coustomer main menu"<<endl;
+                customer_cart[l]=0;
+            }
+        }
+        while(more==0);
+	}
+	else if (customrChoice == 3)
+	{
+		cout<<"Books in Cart are :"<<endl;
+        for(i=0;i<=x,i++)
+        {
+            if(customer_cart[i] != 0){
+                cout << "Details of book number "<<i<<endl;
+                cout<<"Book Title: "<<books[i]<<endl;
+                cout<<"Author: "<<authors[i]<<endl;
+                cout<<"Genre: "<<genre[i]<<endl;
+                cout<<"Type: "<<type[i]<<endl;
+                cout<<"price: "<<price[i]<<endl;
+            }
+        }
+	}
+	else if (customrChoice == 4)
+	{
+        cout<<"Checking out the cart :"<<endl;
+        int total_price=0;
+        cout<<"Books in Cart are :"<<endl;
+        for(i=0;i<=x,i++)
+        {
+            if(customer_cart[i] != 0){
+                cout << "Details of book number "<<i<<endl;
+                cout<<"Book Title: "<<books[i]<<endl;
+                cout<<"Author: "<<authors[i]<<endl;
+                cout<<"Genre: "<<genre[i]<<endl;
+                cout<<"Type: "<<type[i]<<endl;
+                cout<<"price: "<<price[i]<<endl;
+            }
+        }
+        total_price=total_price+price[i];
+        cout<<"Total Price is : "<<total_price<<endl;
+	}
+
+        }*/
+    }
+    cout << "THANK YOU FOR USING OUR PROGRAM\n";
+    return 0;
+}
+}
+}
